@@ -2,9 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
 
-[ApiController]
+[ApiController] 
 [Route("[controller]")]
-public class WeatherForecastController : ControllerBase
+public class WeatherForecastController : ControllerBase //only the characters before "Controller" are used to decorate the api endpoint name i.e /WeatherForecast
 {
     private static readonly string[] Summaries = new[]
     {
@@ -19,9 +19,9 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<WeatherForecast> Get()
+    public IEnumerable<WeatherForecast> Get() // provides 6 weather forecasts, which are then placed in an array
     {
-        return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+        return Enumerable.Range(1, 6).Select(index => new WeatherForecast
         {
             Date = DateTime.Now.AddDays(index),
             TemperatureC = Random.Shared.Next(-20, 55),

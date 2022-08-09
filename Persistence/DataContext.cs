@@ -8,6 +8,6 @@ namespace Persistence
         public DataContext(DbContextOptions options) : base(options)
         {
         }
-        public DbSet<Activity> ? Activities { get; set; } //represent table called "Activities"
+        public DbSet<Activity>? Activities { get; set; } //represent table called "Activities"
     }
 }

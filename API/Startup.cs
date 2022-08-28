@@ -13,6 +13,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Persistence; //sub-directory
+using MediatR;
+using Application.Activities;
 
 namespace API
 {
@@ -46,6 +48,7 @@ namespace API
                 });
             }
             );
+            services.AddMediatR(typeof(List.Handler).Assembly); //tells MediatR where to find handlers
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
